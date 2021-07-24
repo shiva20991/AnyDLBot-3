@@ -10,7 +10,8 @@ logger = logging.getLogger(__name__)
 
 import os
 import sqlite3
-
+import math
+import time
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
@@ -71,7 +72,7 @@ async def start(bot, update):
 
 @pyrogram.Client.on_message(pyrogram.filters.command(["status"]))
 async def status(bot, update):
-    currentTime = time.time()
+    currentTime = time_formatter(time.time())
     total, used, free = shutil.disk_usage(".")
     total = humanbytes(total)
     used = humanbytes(used)
