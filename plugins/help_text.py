@@ -71,7 +71,7 @@ async def start(bot, update):
 
 @pyrogram.Client.on_message(pyrogram.filters.command(["status"]))
 async def status(bot, update):
-    currentTime = time_formatter(time.time())
+    now = time_formatter(time.time())
     total, used, free = shutil.disk_usage(".")
     total = humanbytes(total)
     used = humanbytes(used)
