@@ -35,6 +35,8 @@ class Development(Config):
   APP_ID = 6
   API_HASH = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
   TG_BOT_TOKEN = ""
+  GDRIVE_FOLDER_ID = ""
+  CHAT_BASE_TOKEN = ""
   AUTH_USERS = [
       "7351948"
       # is a string for LEGACY purposes
