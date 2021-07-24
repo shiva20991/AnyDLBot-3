@@ -10,8 +10,6 @@ logger = logging.getLogger(__name__)
 
 import os
 import sqlite3
-import math
-import time
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
@@ -25,7 +23,6 @@ import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.chat_base import TRChatBase
-from helper_funcs.display import time_formatter, humanbytes
 
 def GetExpiryDate(chat_id):
     expires_at = (str(chat_id), "Source Cloned User", "1970.01.01.12.00.00")
@@ -69,19 +66,6 @@ async def start(bot, update):
         text=Translation.START_TEXT,
         reply_to_message_id=update.message_id
     )
-
-@pyrogram.Client.on_message(pyrogram.filters.command(["status"]))
-async def status(bot, update):
-    currentTime = time_formatter(time.time())
-    total, used, free = shutil.disk_usage(".")
-    total = humanbytes(total)
-    used = humanbytes(used)
-    free = humanbytes(free)
-
-    ms_g = f"<b>Bot Uptime</b>: <code>{currentTime}</code>\n" \
-        f"<b>Total disk space</b>: <code>{total}</code>\n" \
-        f"<b>Used</b>: <code>{used}</code>\n" \
-        f"<b>Free</b>: <code>{free}</code>\n"
 
 
 @pyrogram.Client.on_message(pyrogram.filters.command(["upgrade"]))
