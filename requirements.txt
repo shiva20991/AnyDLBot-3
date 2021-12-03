@@ -25,3 +25,16 @@ filetype
 tldextract
 motor
 https://github.com/Tinche/aiofiles/archive/master.zip
+aiohttp
+beautifulsoup4
+hachoir
+numpy
+Pillow
+pyrogram
+requests
+tgcrypto
+yt-dlp
+olefile
+lk21
+filetype
+tldextract
