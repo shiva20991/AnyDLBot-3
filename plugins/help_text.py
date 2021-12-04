@@ -41,7 +41,6 @@ async def get_me_info(bot, update):
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
-
 @pyrogram.Client.on_message(pyrogram.filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
@@ -50,7 +49,6 @@ async def start(bot, update):
         text=Translation.START_TEXT,
         reply_to_message_id=update.message_id
     )
-
 @pyrogram.Client.on_message(pyrogram.filters.command(["upgrade"]))
 async def upgrade(bot, update):
     # logger.info(update)
@@ -61,17 +59,15 @@ async def upgrade(bot, update):
         reply_to_message_id=update.message_id,
         disable_web_page_preview=True
     )
-
 @pyrogram.Client.on_message(pyrogram.filters.command(["about"]))
 async def help_user(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.SOURCE,
+        text=Translation.ABOUT,
         parse_mode="html",
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
-
 @pyrogram.Client.on_message(pyrogram.filters.command(["help"]))
 async def help_user(bot, update):
     # logger.info(update)
