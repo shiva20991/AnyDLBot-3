@@ -51,7 +51,6 @@ async def start(bot, update):
         reply_to_message_id=update.message_id
     )
 
-
 @pyrogram.Client.on_message(pyrogram.filters.command(["upgrade"]))
 async def upgrade(bot, update):
     # logger.info(update)
@@ -72,7 +71,8 @@ async def help_user(bot, update):
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
-    @pyrogram.Client.on_message(pyrogram.filters.command(["help"]))
+
+@pyrogram.Client.on_message(pyrogram.filters.command(["help"]))
 async def help_user(bot, update):
     # logger.info(update)
     await bot.send_message(
