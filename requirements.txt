@@ -19,7 +19,7 @@ aiohttp
 beautifulsoup4
 numpy
 Pillow
-pyrogram
+pyrogram==1.4.12
 requests
 tgcrypto
 yt-dlp
