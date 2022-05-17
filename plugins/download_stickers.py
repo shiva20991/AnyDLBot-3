@@ -63,8 +63,8 @@ async def DownloadStickersBot(bot, update):
     await bot.send_document(
         chat_id=update.chat.id,
         document=the_real_download_location,
-        # thumb=thumb_image_path,
-        # caption=description,
+        thumb=thumb_image_path,
+        caption=description,
         # reply_markup=reply_markup,
         reply_to_message_id=a.message_id,
         progress=progress_for_pyrogram,
